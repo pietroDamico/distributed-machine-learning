@@ -1,13 +1,22 @@
-# Sample Hardhat Project
+# Fall 2023 blockchain project: decentralized machine learning
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+This is the project for the fall 2023 blockchain exam at Università di Roma - La Sapienza.
 
-Try running some of the following tasks:
+The goal is to train a shared model - a MNIST classifier - in a decentralized manner. 
+Different workers with different datasets will participate in the training, which will be coordinated by a smart contract deployed on an Ethereum blockchain.
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+------
+USAGE:
+
+'cd' into the root folder.
+
+'npx hardhat node' to spin up a local developement blockchain.
+
+'npx hardhat run ./scripts/deploy.js --network localhost' to compile and deploy the smart contract. Edit deploy.js to set the number of rounds and the number of workers.
+
+'python ./scripts/number_oracle.py' starts and oracle sending random numbers to the smart contract (they are needed for some stuff).
+
+'python ./scripts/async_workers.py' starts the training task.
+
+------
+
